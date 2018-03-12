@@ -1,12 +1,12 @@
 # fusser
 - simple fuzzer
 - usage: string-generator.py <program> <program arguments> <options> <arguments>
--h           prints this help
--p           generate only the printable ASCII characters
--a           generate all ASCII characters
--0           include the null (0 byte) character
--n           generate only digits
--l <range>   generate random length lines within <range> (\n terminated strings)
--f <name>    record characters in file <name>
--d <seconds> waits <seconds> following each character
--r <name>    replay characters in file <name> to output
+- [x] -h           prints this help
+- [x] -p           generate only the printable ASCII characters
+- [x] -a           generate all ASCII characters
+- [x] -0           include the null (0 byte) character
+- [x] -n           generate only digits
+- [x] -l <range>   generate random length lines within <range> (\n terminated strings)
+- [ ] -f <name>    record characters in file <name>
+- [x] -d <seconds> waits <seconds> following each character
+- [ ] -r <name>    replay characters in file <name> to output
