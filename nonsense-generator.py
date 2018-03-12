@@ -44,10 +44,10 @@ def main(argv):
             replay_file = arg + datetime.datetime.now().strftime('%a%Y%b%d%H%M%S')
             print(replay_file)
 
-    fuzzy_out(string_type, string_length, delay) 
+    fuzzy_out(string_type, string_length, delay, record_file_path) 
 
 
-def fuzzy_out(string_type, string_length, delay=0):
+def fuzzy_out(string_type, string_length, delay=0, record_file=''):
     out = generate_string(string_type, string_length)
     if delay == 0:
         print(out)
@@ -55,6 +55,11 @@ def fuzzy_out(string_type, string_length, delay=0):
         for s in out:
             time.sleep(delay)
             print(s)
+    
+    if len(record_file) > 0:
+        rf = open(record_file, 'wb')
+        rf.write(out +'\n')
+        rf.close()
 
 
 def usage():
