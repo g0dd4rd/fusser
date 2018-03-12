@@ -7,6 +7,7 @@
 - [x] -0           include the null (0 byte) character
 - [x] -n           generate only digits
 - [x] -l <range>   generate random length lines within <range> (\n terminated strings)
-- [ ] -f <name>    record characters in file <name>
+- [x] -f <name>    record characters in file <name>
 - [x] -d <seconds> waits <seconds> following each character
-- [ ] -r <name>    replay characters in file <name> to output
+- [x] -r <name>    replay characters in file <name> to output
+
