@@ -6,7 +6,7 @@ from subprocess import call
 def main(argv):
     string_type = string.ascii_letters
     string_length = 8
-    record_file_path = os.path.join(os.path.sep, 'tmp')
+    record_file_path = ''
     delay = 0
     replay_file_path = ''
 
@@ -34,14 +34,14 @@ def main(argv):
         elif opt == '-f':
             if arg.__contains__('.'):
                 name, suffix = arg.split('.')
-                record_file_path = os.path.join(record_file_path, name +'-'+ datetime.datetime.now().strftime('%a%Y%b%d%H%M%S' +'.'+ suffix))
+                record_file_path = os.path.join(os.sep, 'tmp', record_file_path, name +'-'+ datetime.datetime.now().strftime('%a%Y%b%d%H%M%S' +'.'+ suffix))
             else:
-                record_file_path = os.path.join(record_file_path, arg + datetime.datetime.now().strftime('%a%Y%b%d%H%M%S'))
+                record_file_path = os.path.join(os.sep, 'tmp', record_file_path, arg + datetime.datetime.now().strftime('%a%Y%b%d%H%M%S'))
             print(record_file_path)
         elif opt == '-d':
             delay = float(arg)
         elif opt == '-r':
-            replay_file = arg + datetime.datetime.now().strftime('%a%Y%b%d%H%M%S')
+            replay_file = arg
             print(replay_file)
 
     fuzzy_out(string_type, string_length, delay, record_file_path) 
