@@ -32,9 +32,11 @@ def main(argv):
         elif opt == '-l':
             string_length = random.randrange(int(arg) + 1)
         elif opt == '-f':
-            if arg.__contains('.'):
-                arg.split('.')
-            record_file_path = os.path.join(record_file_path, arg + datetime.datetime.now().strftime('%a%Y%b%d%H%M%S'))
+            if arg.__contains__('.'):
+                name, suffix = arg.split('.')
+                record_file_path = os.path.join(record_file_path, name +'-'+ datetime.datetime.now().strftime('%a%Y%b%d%H%M%S' +'.'+ suffix))
+            else:
+                record_file_path = os.path.join(record_file_path, arg + datetime.datetime.now().strftime('%a%Y%b%d%H%M%S'))
             print(record_file_path)
         elif opt == '-d':
             delay = float(arg)
