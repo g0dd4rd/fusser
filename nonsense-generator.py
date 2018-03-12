@@ -41,14 +41,20 @@ def main(argv):
         elif opt == '-d':
             delay = float(arg)
         elif opt == '-r':
-            replay_file = arg
-            print(replay_file)
+            replay_file_path = arg
+            print(replay_file_path)
 
-    fuzzy_out(string_type, string_length, delay, record_file_path) 
+    fuzzy_out(string_type, string_length, delay, record_file_path, replay_file_path) 
 
 
-def fuzzy_out(string_type, string_length, delay=0, record_file=''):
+def fuzzy_out(string_type, string_length, delay=0, record_file='', replay_file=''):
     out = generate_string(string_type, string_length)
+    if len(replay_file) > 0 and os.path.exists(replay_file):
+        rp = open(replay_file, 'r')
+        print(rp.read())
+        rp.close()
+        return
+
     if delay == 0:
         print(out)
     else:
