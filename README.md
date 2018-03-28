@@ -1,6 +1,6 @@
 # fusser
 - simple fuzzer
-- usage: nonsense_generator.py -c <program> -o <program arguments> <options> <arguments>
+- usage: nonsense_generator.py <program> <program arguments> <options> <arguments>
 - [x] -h           prints this help
 - [x] -c <program> program to execute
 - [x] -o <args>    arguments to the <program>
