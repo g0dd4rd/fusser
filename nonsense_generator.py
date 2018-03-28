@@ -26,17 +26,14 @@ def main(argv):
             usage()
         elif opt == '-c':
             command = arg
-            #print(command)
         elif opt == '-o':
             command_options = arg
-            #print(command_options)
         elif opt == '-p':
             string_type = string.printable
         elif opt == '-a':
             string_type = string.ascii_letters
         elif opt == '-0':
             string_type = string.ascii_letters + u"\u0000"
-            print(string_type)
         elif opt == '-n':
             string_type = string.digits
         elif opt == '-l':
@@ -56,10 +53,8 @@ def main(argv):
     
     if len(command_options) == 0:
         print('opts: ', opts)
-        #print(command, fuzzy_out(string_type, string_length, delay, record_file_path, replay_file_path))
         call([command, fuzzy_out(string_type, string_length, delay, record_file_path, replay_file_path)])
     else:
-        #print(command, command_options, fuzzy_out(string_type, string_length, delay, record_file_path, replay_file_path))
         call([command, command_options, fuzzy_out(string_type, string_length, delay, record_file_path, replay_file_path)])
 
 
@@ -87,6 +82,8 @@ def fuzzy_out(string_type, string_length, delay=0, record_file='', replay_file='
 def usage():
     print('usage: nonsense_generator.py <program> <program arguments> <options> <arguments>')
     print('-h           prints this help')
+    print('-c <program> program to execute')
+    print('-o <args>    arguments to the <program>')
     print('-p           generate only the printable ASCII characters')
     print('-a           generate all ASCII characters')
     print('-0           include the null (0 byte) character')
