@@ -13,3 +13,5 @@
 - [x] -d <seconds> waits <seconds> following each character
 - [x] -r <name>    replay characters in file <name> to output
 
+Example: nonsense_generator.py -c gedit -o --new-document -p
+
