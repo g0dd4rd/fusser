@@ -1,7 +1,9 @@
 # fusser
 - simple fuzzer
-- usage: string-generator.py <program> <program arguments> <options> <arguments>
+- usage: nonsense_generator.py -c <program> -o <program arguments> <options> <arguments>
 - [x] -h           prints this help
+- [x] -c <program> program to execute
+- [x] -o <args>    arguments to the <program>
 - [x] -p           generate only the printable ASCII characters
 - [x] -a           generate all ASCII characters
 - [x] -0           include the null (0 byte) character
